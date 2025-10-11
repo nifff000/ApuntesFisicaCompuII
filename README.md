@@ -1,2 +1,2 @@
 # ApuntesFisicaCompuII
-Apuntes de Fisica Computacional 2 Udec
+Apuntes para estudiar y entender el curso de buena forma.
