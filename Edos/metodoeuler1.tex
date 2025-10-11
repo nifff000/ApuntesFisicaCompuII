@@ -1,0 +1,118 @@
+\documentclass[11pt,a4paper]{article}
+
+% ======== PAQUETES BÁSICOS ========
+\usepackage[utf8]{inputenc}    % Acentos
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}    % Idioma español
+\usepackage{amsmath, amssymb, amsfonts}  % Matemática
+\usepackage{graphicx}          % Imágenes
+\usepackage{physics}           % Derivadas, gradientes, etc.
+\usepackage{siunitx}           % Unidades físicas (m, s, kg, etc.)
+\usepackage{xcolor}            % Colores
+\usepackage{geometry}          % Márgenes
+\usepackage{fancyhdr}          % Encabezado/pie
+\usepackage{hyperref}          % Enlaces
+\usepackage{listings}          % Código fuente
+\usepackage{caption}           % Subtítulos en código
+\usepackage{tcolorbox}         % Cajas para resúmenes o ejemplos
+
+% ======== CONFIGURACIÓN DE PÁGINA ========
+\geometry{margin=2cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Apuntes de Física y Python}
+\lhead{Isra — UdeC}
+\cfoot{\thepage}
+
+% ======== CONFIGURACIÓN DE CÓDIGO PYTHON ========
+\definecolor{lightgray}{gray}{0.95}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\lstset{
+    language=Python,
+    backgroundcolor=\color{lightgray},
+    commentstyle=\color{darkgreen},
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    basicstyle=\ttfamily\footnotesize,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4
+}
+
+% ======== ESTILO DE CAJAS ========
+\tcbset{
+    colback=blue!5!white,
+    colframe=blue!70!black,
+    fonttitle=\bfseries,
+    coltitle=black,
+    boxrule=0.8pt,
+    arc=3pt
+}
+
+% ======== INICIO DEL DOCUMENTO ========
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Metodo de Euler/Runge-Kutta}}\\[4pt]
+    {\large Universidad de Concepción — Israel Bravo}\\[10pt]
+    \hrulefill
+\end{center}
+
+\section*{Metodo de Euler}
+Para empezar con el metodo de Euler tenemos que establecer la forma general de las ecuaciones que resolveremos con este metodo:
+
+\begin{equation}
+	\frac{du}{dt} = f(u,t)
+\end{equation}
+
+al encontrar cualquier funcion de este tipo, el metodo de euler nos dice que:
+
+\begin{equation}
+	u_{n+1}=f_n+f(u_n,t_n) \Delta t
+\end{equation}
+
+Podemos hacer lo siguiente en python para programar un metodo de resolver edos de la siguiente manera:
+
+\begin{lstlisting}[caption={Programar el metodo de Euler}]
+#Primero que nada, definimos el metodo de euler como:
+
+def euler_system(f, u, t):
+    u = np.copy(u)
+    dt = t[1] - t[0]
+    for n in range(len(t)-1):
+        u[n+1, :] = u[n, :] + f(u[n, :], t[n]) * dt
+    return u
+
+\end{lstlisting}
+Con esto definido ya podemos empezar a usar el metodo de euler de la siguiente manera:
+
+\begin{lstlisting}[caption={Definamos la funcion y todos los parametros}]
+#Importemos los modulos numpy y ademas programemos la edo que resolveremos:
+import numpy as np
+import matplotlib.pyplot as plt
+
+def lotka_volterra(u,t)
+	x,y = u
+	alpha = 1.0
+	beta = 0.1
+	delta = 0.075
+	gamma = 1.5
+	dxdt = alpha*x-beta*x*y
+	dydt = delta*x*y - gamma*y
+	return np.array([dxdt,dydt])
+
+
+
+\end{lstlisting}
+
+\section*{Notas rápidas}
+\begin{itemize}
+    \item $\dv{y}{t} = v_0 \sin(\theta) - g t$ describe la velocidad vertical.
+    \item El tiempo total de vuelo es $T = \frac{2v_0\sin(\theta)}{g}$.
+\end{itemize}
+
+\end{document}
+
