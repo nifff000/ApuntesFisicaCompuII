@@ -21,7 +21,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Apuntes de Física y Python}
-\lhead{Isra — UdeC}
+\lhead{Israel Bravo — UdeC}
 \cfoot{\thepage}
 
 % ======== CONFIGURACIÓN DE CÓDIGO PYTHON ========
@@ -77,36 +77,72 @@ al encontrar cualquier funcion de este tipo, el metodo de euler nos dice que:
 Podemos hacer lo siguiente en python para programar un metodo de resolver edos de la siguiente manera:
 
 \begin{lstlisting}[caption={Programar el metodo de Euler}]
-#Primero que nada, definimos el metodo de euler como:
+#Primero que nada, definimos el metodo de euler como
 
-def euler_system(f, u, t):
+def euler(f, u, t): 
     u = np.copy(u)
     dt = t[1] - t[0]
-    for n in range(len(t)-1):
-        u[n+1, :] = u[n, :] + f(u[n, :], t[n]) * dt
-    return u
+    for n in range(len(t)-1): 
+        u[n+1] = u[n] + f(u[n], t[n])*dt
 
+    return u
 \end{lstlisting}
-Con esto definido ya podemos empezar a usar el metodo de euler de la siguiente manera:
+Con esto definido ya podemos empezar a usar el metodo de euler de la siguiente manera, no sin antes ver cual es la ecuacion que representa el pendulo simple
+
+\begin{equation}
+\begin{cases}
+\dot{\theta} = \omega, \\
+\dot{\omega} = -\frac{g}{l} \sin\theta, \\
+\theta(0) = \theta_0, \\
+\omega(0) = \omega_0
+\end{cases}
+\end{equation}
+con esta ecuacion dada, podemos definir la edo que resolveremos ahora:
+
 
 \begin{lstlisting}[caption={Definamos la funcion y todos los parametros}]
 #Importemos los modulos numpy y ademas programemos la edo que resolveremos:
 import numpy as np
 import matplotlib.pyplot as plt
+#Definamos los parametros:
+g = 9.81
+l = 1.0
+dt = 0.01
+t = np.arange(0,N*dt,dt)
+#Una vez hecho esto, tenemos que definir los valores iniciales:
+u0 = np.array([omega,- (g/l) * np.sin(theta)])
+#Una vez hecho esto, podemos empezar a usar la funcion de euler, y ademas graficarla
+# Inicializamos la matriz para almacenar la solucion
+# Cada fila es [theta, omega]
+u = np.zeros((N, 2))
+u[0] = u0
 
-def lotka_volterra(u,t)
-	x,y = u
-	alpha = 1.0
-	beta = 0.1
-	delta = 0.075
-	gamma = 1.5
-	dxdt = alpha*x-beta*x*y
-	dydt = delta*x*y - gamma*y
-	return np.array([dxdt,dydt])
+
+#Ejecutamos euler
+u = euler(f, u, t)
+
 
 
 
 \end{lstlisting}
+
+Y si hacemos el grafico de la funcion, nos quedaria lo siguiente:
+
+\begin{figure}[h]  % 'h' indica aquí, también puedes usar t (top), b (bottom), p (page)
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/Figure_1.png}  % ajustar ancho
+    \caption{Pendulo simple}
+    \label{fig:Pendulo_Simple}
+\end{figure}
+
+Se puede llegar a apreciar, el como esta funcion retrata al movimiento de este pendulo, de buena manera al principio, pero que segun van pasando los segundos cada vez va aumentando, esto se debe a que el metodo de euler es un metodo que no conserva la energia, y que va inyectando por asi decirlo energia y aumentandola. Esto se puede arreglar si disminuimos el valor de h, pero en si el metodo de euler es el peor metodo o de los peores para resolver edos, debido a este y otros problemas mas que conlleva usarlo.
+
+
+
+
+
+
+
 
 \section*{Notas rápidas}
 \begin{itemize}

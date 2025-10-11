@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.16)  11 OCT 2025 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.16)  11 OCT 2025 15:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -859,6 +859,11 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 79.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 82.
+<img/Figure_1.png, id=7, 682.2288pt x 336.7782pt>
+File: img/Figure_1.png Graphic file (type png)
+<use img/Figure_1.png>
+Package pdftex.def Info: img/Figure_1.png  used on input line 133.
+(pdftex.def)             Requested size: 435.32422pt x 214.89496pt.
 
 
 
@@ -871,7 +876,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fon
 ts/enc/dvips/cm-super/cm-super-t1.enc}
 
-] (./metodoeuler1.aux
+]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[2 <./img/Figure_1.png>] (./metodoeuler1.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -883,27 +897,28 @@ Package rerunfilecheck Info: File `metodoeuler1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32193 strings out of 475109
- 640321 string characters out of 5765325
- 1386091 words of memory out of 5000000
- 54758 multiletter control sequences out of 15000+600000
+ 32221 strings out of 475109
+ 640829 string characters out of 5765325
+ 1487099 words of memory out of 5000000
+ 54776 multiletter control sequences out of 15000+600000
  570264 words of font info for 64 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 98i,11n,101p,427b,1323s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/f
-onts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfr
-m1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr
-/share/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on metodoeuler1.pdf (1 page, 174856 bytes).
+ 98i,11n,101p,552b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+rm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-d
+ist/fonts/type1/public/cm-super/sftt0900.pfb>
+Output written on metodoeuler1.pdf (2 pages, 226739 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 29 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
