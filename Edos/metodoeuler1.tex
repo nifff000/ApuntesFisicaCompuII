@@ -172,12 +172,26 @@ Ahora resolveremos la ecuacion del pendulo pero esta vez sera doble. Esta ecuaci
 
 
 
+\begin{lstlisting}[caption={Edo pendulo doble}]
+#Empecemos por definir la funcion que representa la edo 
+import numpy as np
+import matplotlib.pyplot
+#Parametros fisicos
+g = 9.81
+m1, m2 = 1, 1
+l1, l2 = 1, 1
+#Definamos las condiciones iniciales ahora:
+theta1_0 = np.pi/2
+omega1_0 = 0
+theta2_0 = np.pi/4
+omega2_0 = 0
+x0 = np.array([theta1_0,omega1_0,theta2_0,omega2_0])
+\end{lstlisting}
+\medskip
 
-\section*{Notas rápidas}
-\begin{itemize}
-    \item $\dv{y}{t} = v_0 \sin(\theta) - g t$ describe la velocidad vertical.
-    \item El tiempo total de vuelo es $T = \frac{2v_0\sin(\theta)}{g}$.
-\end{itemize}
+Definamos ahora la funcion vectorial $f(x,t)$
+
+
+
 
 \end{document}
-
