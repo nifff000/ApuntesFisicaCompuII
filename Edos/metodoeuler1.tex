@@ -61,7 +61,7 @@
     \hrulefill
 \end{center}
 
-\section*{Metodo de Euler}
+\section{Metodo de Euler}
 Para empezar con el metodo de Euler tenemos que establecer la forma general de las ecuaciones que resolveremos con este metodo:
 
 \begin{equation}
@@ -138,7 +138,36 @@ Y si hacemos el grafico de la funcion, nos quedaria lo siguiente:
 Se puede llegar a apreciar, el como esta funcion retrata al movimiento de este pendulo, de buena manera al principio, pero que segun van pasando los segundos cada vez va aumentando, esto se debe a que el metodo de euler es un metodo que no conserva la energia, y que va inyectando por asi decirlo energia y aumentandola. Esto se puede arreglar si disminuimos el valor de h, pero en si el metodo de euler es el peor metodo o de los peores para resolver edos, debido a este y otros problemas mas que conlleva usarlo.
 
 
+\subsection{Pendulo doble}
+Ahora resolveremos la ecuacion del pendulo pero esta vez sera doble. Esta ecuacion es un poco mas complicada y enrevesada de lo que es la Edo de un pendulo simple, se ve de la siguiente manera:
 
+
+\begin{equation}
+\begin{aligned}
+\dot{\theta}_1 &= \omega_1, \\
+\dot{\theta}_2 &= \omega_2, \\[0.5em]
+\dot{\omega}_1 &=
+\frac{
+ -g (2m_1 + m_2)\sin\theta_1
+ - m_2 g \sin(\theta_1 - 2\theta_2)
+ - 2 \sin(\theta_1 - \theta_2) m_2
+ \left[ \omega_2^2 l_2 + \omega_1^2 l_1 \cos(\theta_1 - \theta_2) \right]
+}{
+ l_1 \left[ 2m_1 + m_2 - m_2 \cos(2\theta_1 - 2\theta_2) \right]
+}, \\[1em]
+\dot{\omega}_2 &=
+\frac{
+ 2 \sin(\theta_1 - \theta_2)
+ \left[
+  \omega_1^2 l_1 (m_1 + m_2)
+  + g (m_1 + m_2)\cos\theta_1
+  + \omega_2^2 l_2 m_2 \cos(\theta_1 - \theta_2)
+ \right]
+}{
+ l_2 \left[ 2m_1 + m_2 - m_2 \cos(2\theta_1 - 2\theta_2) \right]
+}.
+\end{aligned}
+\end{equation}
 
 
 
